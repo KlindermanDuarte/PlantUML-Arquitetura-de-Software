@@ -1,0 +1,9 @@
+@startuml
+    class ContaBancaria{
+        +String nome_Do_Tirular
+        +String CPF_Do_Titular
+        +String numero_Da_Conta
+        +
+
+    }
+@enduml
