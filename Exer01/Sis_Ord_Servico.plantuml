@@ -1,0 +1,29 @@
+@startuml Diagrama_de_Caso_de_Uso
+    /'Informando um sentido para a interligação entre os atores e os casos de uso'/
+    left to right direction
+    /'Criação do ator'/
+    :Tecnico: as T
+    :Usuario: as US
+    :Spervisor\nTI: as STI
+    /'Criação do caso de uso'/
+
+    
+    package Sistema_OS{
+        /'Colocando os casos de uso dentro do pacote'/
+        usecase "Editar_OS" as EDOS
+        (Cadastrar_OS) as (CADOS)
+        (Verificar\nStatus\nOS) as (VFOS)
+        usecase "Finalizar_OS" as FOS
+    }
+     
+     
+
+    /'Associando os atores com os casos de uso '/
+    T ----> VFOS:Verifica o estado da OS
+    T --up--> CADOS:Faz o cadastro da OS
+    STI ----> VFOS:Verifica o estado da OS
+    STI ----> FOS:Finaliza a OS
+    US ----> CADOS:Faz o cadastro da OS
+    T ---up--> EDOS:Faz a edição da OS
+    US -----> EDOS:Faz a edição da OS
+@enduml
